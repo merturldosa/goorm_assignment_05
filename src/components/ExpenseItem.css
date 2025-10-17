@@ -1,0 +1,159 @@
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 25px;
+  background: linear-gradient(135deg, rgba(30, 33, 46, 0.7) 0%, rgba(26, 29, 41, 0.8) 100%);
+  border: 1px solid rgba(201, 169, 97, 0.15);
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.expense-item:hover {
+  background: linear-gradient(135deg, rgba(36, 41, 56, 0.85) 0%, rgba(30, 33, 46, 0.9) 100%);
+  transform: translateX(5px);
+  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4),
+              0 0 15px rgba(212, 175, 55, 0.1);
+}
+
+.expense-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  margin-right: 20px;
+}
+
+.expense-name {
+  font-size: 1.15rem;
+  color: #e8e8e8;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.expense-amount {
+  font-size: 1.2rem;
+  color: #c9a961;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-edit,
+.btn-delete {
+  background: rgba(201, 169, 97, 0.15);
+  border: 1px solid rgba(201, 169, 97, 0.3);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+  color: #c9a961;
+}
+
+.btn-edit:hover {
+  background: rgba(74, 124, 89, 0.25);
+  border-color: #4a7c59;
+  color: #5fa673;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(74, 124, 89, 0.3);
+}
+
+.btn-delete:hover {
+  background: rgba(139, 68, 68, 0.25);
+  border-color: #8b4444;
+  color: #c87171;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(139, 68, 68, 0.3);
+}
+
+.btn-edit:active,
+.btn-delete:active {
+  transform: scale(1);
+}
+
+/* 편집 모드 스타일 */
+.expense-item.editing {
+  background: linear-gradient(135deg, rgba(74, 124, 89, 0.15) 0%, rgba(58, 98, 71, 0.2) 100%);
+  border-color: rgba(74, 124, 89, 0.4);
+  padding: 22px 25px;
+}
+
+.edit-input {
+  padding: 10px 14px;
+  border: 1px solid rgba(201, 169, 97, 0.3);
+  background-color: rgba(30, 33, 46, 0.8);
+  color: #e8e8e8;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-right: 12px;
+  outline: none;
+  flex: 1;
+  transition: all 0.3s ease;
+}
+
+.edit-input:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.btn-save,
+.btn-cancel {
+  padding: 9px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.btn-save {
+  background: linear-gradient(135deg, #4a7c59 0%, #3a6247 100%);
+  color: #e8e8e8;
+  box-shadow: 0 4px 12px rgba(74, 124, 89, 0.3);
+}
+
+.btn-save:hover {
+  background: linear-gradient(135deg, #5a8c69 0%, #4a7257 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(74, 124, 89, 0.4);
+}
+
+.btn-cancel {
+  background: linear-gradient(135deg, #8b4444 0%, #6d2e2e 100%);
+  color: #e8e8e8;
+  box-shadow: 0 4px 12px rgba(139, 68, 68, 0.3);
+}
+
+.btn-cancel:hover {
+  background: linear-gradient(135deg, #a14d4d 0%, #7d3535 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(139, 68, 68, 0.4);
+}
+
+@media (max-width: 768px) {
+  .expense-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .expense-info {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .btn-group {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
